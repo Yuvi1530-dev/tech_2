@@ -48,13 +48,13 @@ export class RigisterComponent  implements OnInit {
         "password": registerValue.password,
       }
       this.service.getData(payload, "POST", "/index.php").subscribe((res: any) => {
-        if(res.status==1){
-          this.notify.showSuccess("User Created Successfully",'')
+        if(res.success==true){
+          this.notify.showSuccess(res.message,'')
          setTimeout(() => {
           this.route.navigate(['/login'])
-         }, 20000);
+         }, 4000);
         }else{
-          this.notify.showError("Something went wrong.Please try again later",'');
+          this.notify.showError(res.message,'');
         }
       })
     } else {
