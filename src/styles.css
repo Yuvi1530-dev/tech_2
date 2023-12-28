@@ -1,0 +1,58 @@
+/* Core Grid CSS */
+@import 'ag-grid-community/styles/ag-grid.css';
+/* Quartz Theme Specific CSS */
+@import 'ag-grid-community/styles/ag-theme-quartz.css';
+
+@import 'ngx-toastr/toastr';
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 5%;
+    justify-content: center;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.custom-c0ntext {
+    position: absolute;
+    left: 481px;
+    top: 156px;
+    border: 1px solid black;
+    padding: 2%;
+    border-radius: 10px;
+    line-height: 21px;
+    background: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+.example-spacer_2{
+    flex: 5 1 auto;
+}
+.text-center {
+    text-align: center;
+}
+.pt-7{
+    padding-top:7%;
+}
+.pd-7{
+    padding: 7%;
+}
+.mt-34{
+    margin-top: 34px;
+}
+.w-80{
+    width: 80%;
+}

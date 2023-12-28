@@ -1,0 +1,34 @@
+<mat-grid-list cols="1" rowHeight="2:1" class="pd-7">
+    <section>
+        <div class="row">
+            <div class="col-md-3">
+                <mat-card >
+                    <mat-card-title>Location</mat-card-title>
+                    <mat-card-content>{{dataSource.location.name}}</mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-3">
+                <mat-card >
+                    <mat-card-title>Humidity</mat-card-title>
+                    <mat-card-content>{{dataSource.current.humidity}}</mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-3">
+                <mat-card >
+                    <mat-card-title>Air Quality</mat-card-title>
+                    <mat-card-content><ul class="detail_air">
+                        <li >Co : {{dataSource.current.air_quality.co}}</li>
+                        <li >No2 : {{dataSource.current.air_quality.no2}}</li>
+                        <li >O3 : {{dataSource.current.air_quality.o3}}</li>
+                    </ul></mat-card-content>
+                </mat-card>
+            </div>
+            <div class="col-md-3">
+                <mat-card >
+                    <mat-card-title>Last Update</mat-card-title>
+                    <mat-card-content>{{dataSource.current.last_updated}}</mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </section>
+</mat-grid-list>

@@ -1,0 +1,88 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+    <div class="login_card">
+        <mat-card class="logincard">
+            <mat-card-title class="text-center">Register</mat-card-title>
+            <mat-card-content >
+                <form  [formGroup]="registerForm" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="example-container">
+                                <mat-form-field class="w-80">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput placeholder="Yuvaraj" name="userName" formControlName="userName" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['userName'].errors && f['userName'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['userName'].errors && f['userName'].errors['required'] ">Enter your Email *</p>
+                                  <p class="error_color" *ngIf="f['userName'].errors && f['userName'].errors['pattern']"> Enter Valid Email*</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container">
+                                <mat-form-field class="mt-34" style="width: 80%">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="pat@example.com" name="email" formControlName="email" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['email'].errors && f['email'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['required'] ">Enter your Email *</p>
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['pattern']"> Enter Valid Email*</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container mt-34">
+                                <mat-form-field class="w-80">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password" required>
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+
+                                    <div class="error_email error_color"
+                                    *ngIf="f['password'].errors  && f['password'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['password'].errors&&f['password'].errors['required']"> Enter your password*</p>
+                                 
+                                </div>
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container mt-34">
+                                <mat-form-field class="w-80">
+                                    <mat-label>Confirm-Password</mat-label>
+                                    <input matInput [type]="confirmHide ? 'password' : 'text'" name="confirmPassword" formControlName="confirmPassword" (change)="confirmPass($event)" required>
+                                    <button mat-icon-button matSuffix (click)="confirmHide = !confirmHide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="confirmHide">
+                                      <mat-icon>{{confirmHide ? 'visibility_off':'visibility'}}</mat-icon> 
+                                    </button>
+                                  
+                                  <div class="error_email error_color"
+                                  *ngIf="f['confirmPassword'].errors  && f['confirmPassword'].touched || formSubmit || showConfirm"
+                                >
+                                  <p class="error_color" *ngIf="!showConfirm">Your Password Doesn't match.Please Chcek*</p>
+                                  <p class="error_color" *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']"> Enter your confrim password*</p>
+                                 
+                                </div>
+                                
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                          <a mat-button href="login">Login</a>
+                        </div>
+                    </div>
+
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" class="register_btn" (click)="registerSubmit()">Register</button>
+                    </div>
+                </form>
+            </mat-card-content>
+    
+        </mat-card>
+    </div>
+
+</mat-grid-list>

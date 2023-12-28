@@ -1,0 +1,57 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+    <div class="login_card">
+        <mat-card class="logincard">
+            <mat-card-title class="text-center">Login</mat-card-title>
+            <mat-card-content >
+                <form  [formGroup]="loginForm" method="POST">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="example-container">
+                                <mat-form-field style="width: 80%;">
+                                    <mat-label>Enter your email</mat-label>
+                                    <input matInput placeholder="pat@example.com" name="email" formControlName="email" [(ngModel)]="userName" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['email'].errors && f['email'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['required'] ">Enter your Email *</p>
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['pattern']"> Enter Valid Email*</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container" style="margin-top: 36px;">
+                                <mat-form-field style="width: 80%;">
+                                    <mat-label>Enter your password</mat-label>
+                                    <input matInput [type]="hide ? 'password' : 'text'" name="password" formControlName="password" [(ngModel)]="password" required>
+                                    
+                                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </button>
+
+                                    <div class="error_email error_color"
+                                    *ngIf="f['password'].errors  && f['password'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['password'].errors&&f['password'].errors['required']"> Enter your password*</p>
+                                 
+                                </div>
+                                  </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-checkbox class="example-margin" (change)="storeValue($event)"  [checked]="isChecked==true">Remember me</mat-checkbox>
+                        </div>
+                        <div class="col-md-6">
+                            <a mat-button href="Register">Register Here?</a>
+                        </div>
+                    </div>
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" class="login_btn" (click)="loginSubmit()" type="button">Primary</button>
+                      </div>
+                </form>
+            </mat-card-content>
+    
+        </mat-card>
+    </div>
+
+</mat-grid-list>

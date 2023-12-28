@@ -1,0 +1,59 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+    <div class="login_card">
+        <mat-card class="logincard">
+            <mat-card-title class="text-center">Contact Us</mat-card-title>
+            <mat-card-content >
+                <form  [formGroup]="contactUs" >
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="example-container ">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Name</mat-label>
+                                    <input matInput placeholder="Yuvaraj" name="userName" formControlName="userName" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['userName'].errors && f['userName'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['userName'].errors && f['userName'].errors['required'] ">Enter Your Name *</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container pt-7">
+                                <mat-form-field class="mt-34 w-100" >
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="pat@example.com" name="email" formControlName="email" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['email'].errors && f['email'].touched || formSubmit"
+                                  >
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['required'] ">Enter Your Email *</p>
+                                  <p class="error_color" *ngIf="f['email'].errors && f['email'].errors['pattern']"> Enter Your Valid Email*</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="example-container pt-7">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Mobile No</mat-label>
+                                    <input matInput placeholder="Yuvaraj"  name="mobileNumber" formControlName="mobileNumber" oninput="this.value = this.value.replace(/^\s+/g, '').replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+                                    <div class="error_email error_color"
+                                    *ngIf="f['mobileNumber'].errors && f['mobileNumber'].touched"
+                                  >
+                                  <p class="error_color" *ngIf="f['mobileNumber'].errors && f['mobileNumber'].errors['required'] ">Enter Your Number *</p>
+                                  <p class="error_color" *ngIf="f['mobileNumber'].errors && f['mobileNumber'].errors['maxLength']"> Enter Valid Number*</p>
+                                </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" class="register_btn" (click)="contactSubmit()">Register</button>
+                      </div>
+                </form>
+            </mat-card-content>
+    
+        </mat-card>
+    </div>
+
+</mat-grid-list>

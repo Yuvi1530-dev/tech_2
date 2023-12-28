@@ -1,0 +1,31 @@
+.error_email {
+    position: absolute;
+    top: 38px;
+}
+
+.login_card {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: auto;
+}
+
+.logincard {
+    width: 508px;
+    padding: 3%;
+    box-shadow: 0 0 15px #917e9196;
+    border-radius: 10px;
+}
+
+.error_color {
+    font-size: 12px;
+    color: red;
+}
+
+.register_btn {
+    display: flex;
+    margin: auto;
+}
+.w-100{
+    width: 100%;
+}

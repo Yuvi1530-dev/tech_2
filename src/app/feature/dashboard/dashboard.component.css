@@ -1,0 +1,8 @@
+.detail_air{
+    list-style: none;
+    display: flex;
+    gap: 19px;
+}
+mat-card{
+    padding: 9%;
+}
