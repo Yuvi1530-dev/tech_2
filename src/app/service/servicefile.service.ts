@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { environment } from 'src/environments/environment';
-import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class ServicefileService {
   Api: any = '';
@@ -35,28 +34,6 @@ export class ServicefileService {
 
 		return result.join("&");
 	}
-
-  //Slect Box Data Pass
-  private checkboxValueSubject = new BehaviorSubject<{ value: any; isChecked: boolean }>({
-    value: null,
-    isChecked: false,
-  });
-  checkboxValue$ = this.checkboxValueSubject.asObservable();
-
-  setCheckboxValue(value: any, isChecked: boolean): void {
-    this.checkboxValueSubject.next({ value, isChecked });
-  }
-
-  //Used fro select all
-  private SelectAllSubject = new BehaviorSubject<{ value: any; isChecked: boolean }>({
-    value: null,
-    isChecked: false,
-  });
-  selectBox$ = this.SelectAllSubject.asObservable();
-
-  setSelectall(value: any, isChecked: boolean): void {
-    this.SelectAllSubject.next({ value, isChecked });
-  }
   setCookie(cname: any, cvalue: any, exdays: any) {
 		const d = new Date();
 		d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
